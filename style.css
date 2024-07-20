@@ -1,0 +1,402 @@
+
+
+body {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Merriweather", serif;
+
+}
+div {
+    /* border: 1px solid black; */
+
+}
+
+.firstpage, .secondpage, .thirdpage, .fourthpage {
+    min-height: 97vh;
+    margin-bottom: 2vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+}
+
+.secondpage , .fourthpage {
+    background-color: rgba(217, 217, 217, 0.322);
+}
+
+.firstpage {
+    flex-wrap: wrap;
+}
+.left-1, .middle-1 , .right-1 {
+    width: 50%;
+}
+
+.left-1 {
+    width: 20%;
+}
+
+.right-1 {
+    width: 80%;
+}
+
+.firstpage h1, h2, h3, h4, h5, p {
+    text-align: left;
+}
+
+.firstpage h3 {
+    margin-left: 0px;
+}
+
+p, h1, h2, h3, h4, h5 {
+    margin: 0px;
+}
+
+#profile-pict {
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+}
+
+.secondpage p, .secondpage h1, .secondpage h2, .secondpage h3, .secondpage h4,.secondpage h5 {
+    text-align: center;
+}
+
+.secondpage {
+    flex-direction: column;
+}
+
+.secondpage-header {
+    width: 50%;
+}
+
+.skills {
+    display: flex;
+    width: 72%;
+    justify-content: space-evenly;
+    flex-wrap: wrap
+}
+
+.skill img {
+    width: 10vw ;
+    height: auto;
+}
+
+.skill h2, h3, h4 {
+    margin: 10px;
+}
+
+.skill-top {
+    padding-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.skill {
+    margin-bottom: 5vw;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto; /* Allows vertical scrolling if needed */
+}
+
+.skill-top {
+    background-color: rgba(255, 192, 203, 0.326);
+    border-radius: 20px;
+}
+
+.fourthpage-header {
+    max-width: 70vw;
+}
+
+.fourthpage-header h1, .fourthpage-header h2, .fourthpage-header h3, .fourthpage-header p {
+    text-align: center;
+    margin: 1px;
+}
+
+.contact-option {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 70vw;
+}
+
+.contact-opt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: pink;
+}
+
+/* Navbar container */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #9c9c9c92; /* Semi-transparent background */
+    color: black; /* Fixed color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Add padding for better spacing */
+    border-bottom: 1px solid #ddd; /* Light border for visual separation */
+    z-index: 1000; /* Ensure navbar is above other content */
+}
+
+/* Navbar list styles */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+/* Navbar heading styles */
+.navbar h1 {
+    margin: 0;
+    padding-left: 2vw;
+}
+
+/* Navbar list item styles */
+.navbar li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* Navbar link styles */
+.navbar a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px; /* Add padding for better click area */
+    display: block;
+    position: relative; /* Required for the underline effect */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for color and underline */
+}
+
+/* Active link underline effect */
+.navbar a.active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -5px; /* Position underline just below the text */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Thickness of the underline */
+    background-color: black; /* Color of the underline */
+    transition: all 0.3s ease; /* Smooth transition for the underline movement */
+}
+
+
+
+@keyframes fade-in-from-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-text {
+    animation: fade-in-from-bottom 1s ease;
+}
+
+a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Keyframes for the fade-in and slide-up effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to the header */
+.secondpage-header {
+    opacity: 0; /* Initially hidden */
+    animation: fadeInUp 1s ease-out forwards; /* Animation settings */
+}
+
+/* Apply animation to each skill */
+.skill {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start position for animation */
+    animation: fadeInUp 1s ease-out forwards; /* Animation settings */
+    animation-delay: var(--delay); /* Delay for each skill */
+}
+
+/* Set delay for animation based on a custom property */
+.skill:nth-child(1) {
+    --delay: 1.8s;
+}
+
+.skill:nth-child(2) {
+    --delay: 2.6s;
+}
+
+.skill:nth-child(3) {
+    --delay: 2.8s;
+}
+
+.skill:nth-child(4) {
+    --delay: 3.0s;
+}
+
+
+.contact-opt {
+    padding: 10px; /* Add padding for better spacing inside the div */
+    border-radius: 5px; /* Rounded corners for a nicer look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for both transform and shadow */
+    cursor: pointer; /* Change cursor to pointer to indicate clickable area */
+}
+
+.contact-opt:hover {
+    transform: translateY(-5px); /* Lift the element up */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to create elevation effect */
+}
+
+.thirdpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.thirdpage p, .thirdpage h1 {
+    text-align: center;
+}
+
+.thirdpage-header {
+    width: 50%;
+    margin-bottom: 5px;
+}
+
+.certificates {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 75vw;
+}
+
+.certificate img {
+    width: 15vw;
+    height: auto;
+    border: 1px solid black;
+}
+
+.certificate p {
+    font-size: smaller;
+}
+
+.certificate {
+    margin: 20px;
+}
+
+/* Styles for screens up to 599px wide (e.g., mobile devices) */
+@media only screen and (max-width: 599px) {
+    body {
+        font-size: smaller;
+    }
+
+    .firstpage {
+        flex-direction: column;
+        align-items: flex-starts;
+    }
+
+    .left-1, .middle-1, .right-1 {
+        width: 80vw;
+    }
+
+    #contact-head {
+        display: none;
+    }
+
+    .skill {
+        margin-bottom: 5vw;
+    }
+
+    .secondpage-header {
+        margin-top: 5vw;
+        width: 90vw;
+    }
+
+    .skills {
+        width: 90vw;
+    }
+
+    .skill  {
+        width: 40vw;
+    }
+
+    #profile-pict {
+        margin: 0px;
+    }
+    
+    .left-1 {
+        margin-top: 7.5vh;
+    }
+
+    .thirdpage-header {
+        width: 90vw !important;
+    }
+
+    .certificate img {
+        width: 30vw !important;
+        height: auto;
+    }
+
+    .certificate {
+        margin: 10px;
+    }
+
+    .navbar {
+        display: none;
+    }
+    
+    /* Navbar mobile styles */
+    .navbar-mobile {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #ffffff; /* Background color */
+        color: black; /* Fixed color */
+        display: flex;
+        align-items: center;
+        padding: 10px 0; /* Adjust padding for better spacing */
+        border-top: 1px solid #ddd; /* Light border for visual separation */
+        z-index: 1000; /* Ensure navbar is above other content */
+        flex-direction: row;
+        justify-content: space-evenly;
+        border-top: 1px solid black;
+        display: flex !important;
+    }
+
+
+    
+}
+
+.navbar-mobile {display: none;}
