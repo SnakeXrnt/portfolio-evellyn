@@ -316,6 +316,18 @@ a {
     margin: 20px;
 }
 
+.skill-top img {
+    margin-top: 20px;
+}
+
+.filler-mobile-footer {
+    display: none;
+}
+
+.certificate p {
+    text-wrap: wrap;
+}
+
 /* Styles for screens up to 599px wide (e.g., mobile devices) */
 @media only screen and (max-width: 599px) {
     body {
@@ -394,6 +406,12 @@ a {
         border-top: 1px solid black;
         display: flex !important;
     }
+
+    .filler-mobile-footer {
+        display: flex;
+    }
+
+
 
 
     
